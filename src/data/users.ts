@@ -1,4 +1,3 @@
-// contoh data LMS user
 module.exports = [
   {
     id: 1,

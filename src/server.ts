@@ -1,19 +1,12 @@
-// inisialisasi
-const express = require('express');
-const apiRoutes = require('./routes');
+import express from 'express';
+import apiRoutes from './routes';  
+
 const app = express();
 const PORT = 3000;
 
-// middleware request body, jika diperlukan
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use('/api', apiRoutes);  
 
-// handle seluruh request /api/* ke route API
-app.use('/api', apiRoutes);
-
-// event loop
 app.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
-
-export default app;

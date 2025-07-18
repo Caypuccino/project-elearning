@@ -1,8 +1,8 @@
-const router = require('express').Router();
+import { Router } from 'express';
+import userController from '../controllers/user-controller';
 
-const userController = require('../controllers/user-controller');
+const router = Router();
 
-// GET /api/users
-router.get('/', userController.index);
+router.get('/', userController.getUsers);  // Pastikan userController.getUsers adalah fungsi
 
-module.exports = router;
+export default router;
